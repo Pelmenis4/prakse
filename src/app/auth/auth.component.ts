@@ -19,4 +19,6 @@ export class AuthComponent implements OnInit {
       this.router.navigate(["/dashboard/page/1"]);
     }
   }
+
+  //HELLO
 }
