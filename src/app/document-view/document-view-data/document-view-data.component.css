@@ -1,0 +1,116 @@
+.data-container {
+    background-color: rgb(243, 241, 241);
+    margin-left: 10px;
+    width: 500px;
+}
+
+.data-border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-radius: 3px;
+}
+
+/* Lēmums */
+
+.data-number-field {
+    display: flex;
+    padding: 15px;
+}
+
+.data-date {
+    font-weight: bold;
+    width: 5%;
+    text-align: center;
+}
+
+.data-decision {
+    margin-left: 15px;
+}
+
+.data-number {
+    position: absolute;
+    margin-top: 21px;
+    margin-left: 38px;
+}
+
+.data-status {
+    background-color: lightgrey;
+    color: grey;
+    margin-left: 200px;
+    margin-top: 5px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.data-sent-by {
+    padding: 7px;
+    margin-left: 7px;
+}
+
+
+/* Radio pogas */
+
+.radio {
+    padding: 7px;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.top-border {
+    border-top: 1px solid;
+
+}
+
+.data-break {
+    height: 20px;
+    background-color: white;
+}
+
+.data-margin-bottom {
+    margin-bottom: 15px;
+}
+
+/* Inputs */
+
+.data-title {
+    margin-left: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.data-label {
+    font-weight: normal;
+    margin-left: 15px;
+    width: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.data-input {
+
+    border: 1px solid;
+    border-left: 3px solid green;
+}
+
+.data-select {
+    background-color: rgb(214, 213, 213);
+}
+
+.data-text-area {
+    width: 230px;
+    margin-top: 30px;
+    vertical-align: top;
+}
+
+.data-text {
+    margin-left: 15px;
+}

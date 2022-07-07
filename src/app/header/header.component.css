@@ -1,0 +1,25 @@
+.logo {
+    height: 40px;
+    padding-top: 5px;
+}
+
+::placeholder {
+    color:grey;
+}
+
+.search {
+    padding-left: 30px;
+    padding-top: 12px;
+    color: grey;
+}
+
+.user-image {
+    padding-top: 6px;
+    height: 40px;
+    /* padding-left: 1213px; */
+}
+
+.user-image-location {
+    float: right;
+    margin-left: 30px;
+}

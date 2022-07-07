@@ -1,0 +1,34 @@
+<hr>
+<div class="document-container">
+    <div class="document-checkbox-position">
+        <label for="checkbox"></label>
+        <input type="checkbox" id="checkbox" name="checkbox" class="document-checkbox">
+    </div>
+    <div class="document-information">
+        <div class="box">
+            <!-- <span class="glyphicon glyphicon-unchecked document-checkbox"></span> -->
+            <span class="document-date">{{ document.createdDate | date:'MMM d'  }}</span>
+            <img src="assets/images/Document_status_digitized.PNG" alt="status" *ngIf="document.status == 'DIGITIZED'">
+            <img src="assets/images/Document_status_sent_to_ccb.PNG" alt="status" *ngIf="document.status == 'SENT_TO_CCB'">
+        </div>
+        <div class="document-part1 box">
+            <a class="document-number" (click)="onDocument()">{{ document.number }}</a>
+            <br>
+            <span class="document-decision-action">{{ decisionAction | uppercase }}</span>
+        </div>
+        <div class="document-part2 box">
+            <span class="document-upload-type">{{ document.uploadType }}</span>
+            <span>&nbsp;TBK Lēmums &nbsp;| &nbsp;</span>
+            <span>{{ document.uploadedBy }}</span>
+        </div>
+        <div class="document-part3 box">
+            <span>{{ document.caseNumber }}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>{{ document.contractNumber }}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>{{ document.name }}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span>{{ document.debtAmount }}</span>
+        </div>
+    </div>
+</div>
+
+<hr>
+

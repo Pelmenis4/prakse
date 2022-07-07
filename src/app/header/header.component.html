@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header logo">
+        <img src="assets/images/logo.png" alt="logo" class="logo" (click)="onLogo()">
+      </div>
+      <div class="navbar-header search">
+        <input type="text" placeholder="Meklēt">
+      </div>
+
+      <ul class="collapse navbar-collapse">
+        <div class="user-image-location">
+            <img src="assets/images/user-blank.jpg" alt="image" class="user-image">
+        </div>
+        <div class="nav navbar-nav navbar-right">
+          <li class="dropdown" appDropdown>
+            <a style="cursor: pointer;" class="dropdown-toggle" role="button">Ilmārs Birzleja <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a style="cursor: pointer;" routerLink="/auth">Iziet</a></li>
+                <li><a style="cursor: pointer;" (click)="onBack()">Sākums</a></li>
+            </ul>
+          </li>
+        </div>
+     </ul>
+    </div>
+  </nav>
+  
