@@ -1,3 +1,21 @@
-<div class="page-holder">
-    <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
+
+
+<div style="display: flex;">
+    <div class="page-holder">
+        <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
+        <div class="glyphicon glyphicon-triangle-right arrow-right"></div>
+    </div>
+    <div class="side-panel">
+        <div style="display: flex;">
+            <div class="square-button">
+                <div class="glyphicon glyphicon-resize-horizontal button-symbol" (click)="onSwap()"></div>
+            </div>
+            <div class="square-button" style="margin-left: 30px">
+                <div class="glyphicon glyphicon-pushpin button-symbol"></div>
+            </div>
+        </div>
+        <div class="document-preview" *ngFor="let file of files">
+            <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
+        </div>
+    </div>
 </div>

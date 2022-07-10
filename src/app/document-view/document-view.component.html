@@ -1,8 +1,14 @@
 <app-header [currentPage]="currentPage"></app-header>
 
 
-<div style="display: flex; width: 100%;">
-    <app-document-view-data></app-document-view-data>
-    <app-document-view-page class="view-page"></app-document-view-page>
+<div style="display: flex;">
+    <app-document-view-data class="document-data" id="view-data"></app-document-view-data>
+    <app-document-view-page class="view-page" id="view-page"
+    (swapClick)="onSwap()"></app-document-view-page>
 </div>
+
+
+
+<!-- <div style="display: flex; width: 100%; ">
+</div> -->
 

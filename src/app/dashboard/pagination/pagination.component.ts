@@ -9,7 +9,7 @@ export class PaginationComponent implements OnInit {
 
   @Output() changePage = new EventEmitter<number>();
 
-  public page = 1;
+  @Input() public page = 1;
   public pageSize = 10;
   @Input() public items = 0;
 

@@ -2,6 +2,7 @@
     background-color: rgb(243, 241, 241);
     margin-left: 10px;
     width: 500px;
+    padding-right: 20px;
 }
 
 .data-border {
@@ -28,16 +29,11 @@
     margin-left: 15px;
 }
 
-.data-number {
-    position: absolute;
-    margin-top: 21px;
-    margin-left: 38px;
-}
 
 .data-status {
     background-color: lightgrey;
     color: grey;
-    margin-left: 200px;
+    margin-left: 100px;
     margin-top: 5px;
     padding-top: 4px;
     padding-bottom: 5px;

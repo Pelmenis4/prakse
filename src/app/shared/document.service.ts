@@ -76,7 +76,8 @@ export class DocumentService {
                 contractDate: DATA.documents[i].values.find(v => v.fieldName == 'contractDate')?.valueAsDate,
                 debtCurrency: DATA.documents[i].values.find(v => v.fieldName == 'debtCurrency')?.value,
                 court: DATA.documents[i].values.find(v => v.fieldName == 'court')?.value,
-                decision: DATA.documents[i].values.find(v => v.fieldName == 'decision')?.value
+                decision: DATA.documents[i].values.find(v => v.fieldName == 'decision')?.value,
+                files: DATA.documents[i].files
             }
             this.documents.push(document)
         }

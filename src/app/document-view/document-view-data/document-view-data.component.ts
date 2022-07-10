@@ -12,6 +12,7 @@ export class DocumentViewDataComponent implements OnInit {
   id: number;
   documents = [];
   statusMessage: string;
+  buttonEnabled: boolean = true;
 
   // for the radio buttons
   decisionActions = ['Nodot piespiedu izpildīšanai', 'Paziņojums pieteicējam',
@@ -68,6 +69,7 @@ export class DocumentViewDataComponent implements OnInit {
   onChangeStatus() {
     this.documents[this.id].status = "SENT_TO_CCB";
     this.changeStatus();
+    this.buttonEnabled = false;
   }
 }
 

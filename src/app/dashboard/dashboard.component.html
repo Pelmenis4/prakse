@@ -2,11 +2,12 @@
 (logoClick)="logoClicked()"></app-header>
 
 <app-pagination (changePage)="onChangePage($event)"
-[items]="documentCount" class="dashboard-pagination"></app-pagination>
+[items]="documentCount" class="dashboard-pagination"
+[page]="currentPage"></app-pagination>
 
 <div class="float-container">
     <span class="float-child dashboard-title">Ienākošie rēķini</span>
-    <span class="float-child glyphicon glyphicon-repeat arrow"></span>
+    <span class="float-child glyphicon glyphicon-repeat arrow" (click)="onRefresh()"></span>
 </div>
 
 

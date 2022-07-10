@@ -48,7 +48,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/dashboard/page', page]);
     this.documentService.currentPage = page;
     this.currentPage = this.documentService.currentPage;
-    console.log(this.documentService.currentPage);
 
     let pages = page * 10;
     this.currentDocuments = [];
@@ -146,7 +145,13 @@ export class DashboardComponent implements OnInit {
   // listens to when the logo on the header is pressed and once its pressed, displays first page of currentDocuments.
   logoClicked() {
     this.documentService.currentPage = 1;
+    this.currentPage = 1;
     this.showCurrentDocuments();
+  }
+
+  onRefresh() {
+    this.router.navigate(['/dashboard/page', this.currentPage]);
+    console.log(this.currentPage);
   }
   
 }

@@ -1,6 +1,6 @@
-<div class="data-container">
+
+<div class="data-container" style="margin-bottom: 20px;">
     <button class="btn btn-success" 
-    *ngIf="statusMessage == 'Digitalizēts'" 
     (click)="onChangeStatus()"
     [disabled]="this.documents[this.id].personalCode == '' 
     || this.documents[this.id].name == ''
@@ -9,19 +9,27 @@
     || this.documents[this.id].contractNumber == ''
     || this.documents[this.id].debtAmount == null
     || this.documents[this.id].court == ''
-    || this.documents[this.id].decision == ''">Sūtīt uz CCB</button>
+    || this.documents[this.id].decision == ''
+    || this.statusMessage == 'Nosūtīts uz CCB'
+    || this.buttonEnabled == false">Sūtīt uz CCB</button>
 </div>
 
 <div class="data-container">
     <div class="data-number-field data-border">
         <div class="data-date">{{ documents[id].createdDate | date:'d MMM'  }}</div>
-        <div class="data-decision">LĒMUMS</div>
-        <div class="data-number">{{ documents[id].number }}</div>
+        <div style="margin-left: 15px;">
+            <div>LĒMUMS</div>
+            <div>{{ documents[id].number }}</div>
+        </div>
         <div class="data-status">{{ statusMessage }}</div>
     </div>
 </div>
-<div class="data-container data-border">
-    <div class="data-sent-by">iesūtīja {{ documents[id].uploadedBy }}</div>
+<div class="data-container">
+    <div class="data-border">
+        <div class="data-sent-by">
+            iesūtīja {{ documents[id].uploadedBy }}
+        </div>
+    </div>
 </div>
 
 <div class="data-container" style="margin-top: 20px">

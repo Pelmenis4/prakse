@@ -1,7 +1,27 @@
-.view-page {
-    margin-left: 20%;
-}
-
 .document-container {
     padding: 10px;
+}
+
+
+.view-page {
+    position: absolute;
+    margin-left: 846px;
+
+}
+
+.document-data {
+    position: absolute;
+    height: 631px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* this is for when the view page and view data are swapped. */
+
+.document-data2 {
+    position: absolute;
+    height: 631px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 995px;
 }
