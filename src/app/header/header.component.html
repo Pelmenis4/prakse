@@ -3,15 +3,16 @@
       <div class="navbar-header logo">
         <img src="assets/images/logo.png" alt="logo" class="logo" (click)="onLogo()">
       </div>
-      <div class="navbar-header search">
-        <input type="text" placeholder="Meklēt">
+      <div class="navbar-header header-search">
+        <div class="glyphicon glyphicon-search search-icon"></div>
+        <input type="text" placeholder="Meklēt" class="search" [(ngModel)]="search" (keyup)="searching()">
       </div>
 
       <ul class="collapse navbar-collapse">
-        <div class="user-image-location">
-            <img src="assets/images/user-blank.jpg" alt="image" class="user-image">
-        </div>
         <div class="nav navbar-nav navbar-right">
+          <div class="user-image-location">
+            <img src="assets/images/user-blank.jpg" alt="image" class="user-image">
+          </div>
           <li class="dropdown" appDropdown>
             <a style="cursor: pointer;" class="dropdown-toggle" role="button">Ilmārs Birzleja <span class="caret"></span></a>
             <ul class="dropdown-menu">

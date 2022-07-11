@@ -11,8 +11,11 @@ export class HeaderComponent implements OnInit {
 
   @Input() currentPage: number;
   @Output() logoClick = new EventEmitter<any>(); //event for when logo is clicked.
+  @Output() searchInput = new EventEmitter<string>();
 
   constructor(private router: Router, private documentService: DocumentService) {}
+
+  search: string;
 
   ngOnInit(): void {
   }
@@ -29,5 +32,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/dashboard/page', this.currentPage]);
     console.log(this.currentPage);
   }
-
+  
+  //sends the input from the search field to other components.
+  searching() {
+    this.searchInput.emit(this.search);
+  }
 }

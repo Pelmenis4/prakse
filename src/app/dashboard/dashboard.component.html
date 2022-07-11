@@ -1,5 +1,6 @@
 <app-header [currentPage]="currentPage"
-(logoClick)="logoClicked()"></app-header>
+(logoClick)="logoClicked()"
+(searchInput)="searching($event)"></app-header>
 
 <app-pagination (changePage)="onChangePage($event)"
 [items]="documentCount" class="dashboard-pagination"

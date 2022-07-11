@@ -89,6 +89,7 @@ export class DashboardComponent implements OnInit {
         debtCurrency: DATA.documents[i % 2].values.find(v => v.fieldName == 'debtCurrency')?.value,
         court: DATA.documents[i % 2].values.find(v => v.fieldName == 'court')?.value,
         decision: DATA.documents[i % 2].values.find(v => v.fieldName == 'decision')?.value,
+        files: DATA.documents[i % 2].files
 
       }
 
@@ -154,4 +155,21 @@ export class DashboardComponent implements OnInit {
     console.log(this.currentPage);
   }
   
+  // displays documents are are searched for in the search input.
+  searching(searchInput: string) {
+    if(searchInput != '') {
+      this.currentDocuments = [];
+      for(let i = 0; i < this.documentService.documents.length; i++) {
+        if(searchInput == this.documentService.documents[i].number) {
+          this.currentDocuments.push(this.documentService.documents[i]);
+        }
+        else if(searchInput == this.documentService.documents[i].caseNumber) {
+          this.currentDocuments.push(this.documentService.documents[i]);
+        }
+      }
+    }
+    else {
+      this.showCurrentDocuments();
+    }
+  }
 }

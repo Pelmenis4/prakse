@@ -7,19 +7,40 @@
     color:grey;
 }
 
-.search {
+.header-search {
+    display: flex;
     padding-left: 30px;
     padding-top: 12px;
     color: grey;
+    min-width: 100px;
 }
+
+.search-icon {
+    position: absolute;
+    top: 20px;
+    left: 74px;
+    width: 14px;
+
+  }
+
+.search {
+    padding-left: 23px;
+    width: 300px;
+    height: 30px;
+    border: solid 1px;
+    border-radius: 4px;
+    border-color: lightgrey;
+}
+
 
 .user-image {
     padding-top: 6px;
     height: 40px;
-    /* padding-left: 1213px; */
+    border-radius: 20px;
 }
 
 .user-image-location {
-    float: right;
-    margin-left: 30px;
+    float: left;
+    margin-top: 3px;
 }
+

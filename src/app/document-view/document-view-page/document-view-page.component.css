@@ -27,6 +27,13 @@
     width: 120px;
 }
 
+.side-panel2 {
+    background-color: rgb(88, 88, 88);
+    margin-left: 3px;
+    width: 15px; 
+}
+
+
 .square-button {
     margin: 10px;
     width: 30px;
@@ -44,4 +51,8 @@
 .document-preview {
     margin-top: 3px;
     width: 127px;
+}
+
+.pin {
+    transform: rotate(-45deg);
 }
