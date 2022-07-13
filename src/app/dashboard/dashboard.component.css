@@ -1,12 +1,13 @@
 .dashboard-title {
     font-size: 23px;
     color: grey;
+    margin-left: -10px;
 }
 
 .float-container {
     border: 3px solid #fff;
     padding-left: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 23px;
     padding-top: 10px;
 }
 
@@ -17,12 +18,15 @@
 }
 
 .arrow {
-    font-size: 18px;
+    font-size: 17px;
     margin-top: 7px;
+    margin-left: 10px;
     cursor: pointer;
+    color: grey;
 }
 
 .dashboard-pagination {
     position: absolute;
-    margin-left: 850px;
+    left: 760px;
 }
+

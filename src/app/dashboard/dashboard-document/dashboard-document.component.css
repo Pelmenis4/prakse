@@ -1,13 +1,14 @@
 .document-container {
-    margin-left: 15px;
-    margin-top: 40px;
-    width: 500px;
-    height: 70px;
+    margin-left: 25px;
+    margin-top: 16px;
+    width: 900px;
+    height: 68px;
     position: relative;
+    display: flex;
 }
 
-.box {
-    position: absolute;
+.document-container-child {
+    float: left;
 }
 
 .document-checkbox {
@@ -16,75 +17,108 @@
 
 .document-date {
     font-weight: bold;
-    font-size: 25px;
-    padding: 5px;
-    padding-right: 2px;
+    font-size: 20px;
+}
+
+.document-date-location {
+    margin-left: -5px;
+}
+
+.status {
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.status-image {
+    height: 47px;
 }
 
 .document-part1 {
-    margin-left: 130px;
-    padding-bottom: 30px;
-    width: 200px;
-    margin-bottom: 10px;
-    
+    margin-left: 5px;
+    margin-top: -4px;
 }
 
 .document-part2 {
-    margin-left: 355px;
-    width: 500px;
+    margin-left: 10px;
     color:grey;
-    margin-top: 8px;
+    margin-top: 3px;
+    font-size: 13px;
 }
 
-.document-part3 {
-    margin-left: 355px;
-    width: 500px;
-    margin-top: 35px;
-    color: grey;
-}
 
 .document-number {
-    font-weight: bold;
-    font-size: 25px;
+    font-weight: bolder;
+    font-size: 20px;
     color: black;
+    cursor: pointer;
 }
 
 .document-decision-action {
-    color: grey;
-    border-style: solid;
-    border-color: grey;
-    border-width: 2px;
-    border-spacing: 10px;
-    border-radius: 5px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
+    color: rgb(150, 150, 150);
+    font-weight: 600;
+    font-size: 12px;
+    border: solid 2.4px rgb(221, 221, 221);
+    border-radius: 3px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .document-upload-type {
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 1px;
-    border-color: grey;
+    border: solid 1.5px lightgray;
+    border-radius: 3px;
     padding-top: 3px;
     padding-bottom: 3px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 12px;
 
 }
 
-.document-checkbox {
-    zoom: 1.5;
-    margin-right: 50px;
-    margin-left: 13px;
-    margin-top: 5px;
-}
 
 .document-checkbox-position {
+    zoom: 1.35;
     position: absolute;
+    top: 9px;
+    left: 9px;
 }
 
 .document-information {
     margin-left: 45px;
+}
+
+.border-bottom {
+    border-bottom: solid 1px lightgray;
+}
+
+/* line breaks */
+.space {
+    margin-top: -6px;
+}
+
+.space2 {
+    margin-top: 4px;
+}
+
+.space3 {
+    margin-top: 8.5px;
+}
+
+/* borders and margins for document-part2 */
+
+.document-decision {
+    margin-left: 5px;
+    border-right: solid 1px gray;
+    padding-right: 5px;
+}
+
+
+.seperate {
+    border-right: solid 1px grey;
+    padding-right: 8px;
+}
+
+.seperate2 {
+    margin-left: 8px;
 }

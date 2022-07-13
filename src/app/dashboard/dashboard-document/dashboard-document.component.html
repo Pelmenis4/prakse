@@ -1,34 +1,32 @@
-<hr>
-<div class="document-container">
-    <div class="document-checkbox-position">
+
+<div class="document-container" #border>
+    <div class="document-checkbox-position document-container-child">
         <label for="checkbox"></label>
-        <input type="checkbox" id="checkbox" name="checkbox" class="document-checkbox">
+        <input type="checkbox" id="checkbox" name="checkbox">
     </div>
-    <div class="document-information">
-        <div class="box">
-            <!-- <span class="glyphicon glyphicon-unchecked document-checkbox"></span> -->
-            <span class="document-date">{{ document.createdDate | date:'MMM d'  }}</span>
-            <img src="assets/images/Document_status_digitized.PNG" alt="status" *ngIf="document.status == 'DIGITIZED'">
-            <img src="assets/images/Document_status_sent_to_ccb.PNG" alt="status" *ngIf="document.status == 'SENT_TO_CCB'">
+    <div class="document-information ">
+        <div class="document-date-location document-container-child">
+            <span class="document-date">{{ document.createdDate | date:'d'  }} <div class="space"></div> {{ document.createdDate | date: 'MMM'}}</span>
         </div>
-        <div class="document-part1 box">
-            <a class="document-number" (click)="onDocument()">{{ document.number }}</a>
-            <br>
+        <div class="status document-container-child">
+            <img class="status-image" src="assets/images/Document_status_digitized.PNG" alt="status" *ngIf="document.status == 'DIGITIZED'">
+            <img class="status-image" src="assets/images/Document_status_sent_to_ccb.PNG" alt="status" *ngIf="document.status == 'SENT_TO_CCB'">
+        </div>
+        <div class="document-part1 document-container-child">
+            <span class="document-number" (click)="onDocument()">{{ document.number }}</span>
+            <div class="space2"></div>
             <span class="document-decision-action">{{ decisionAction | uppercase }}</span>
         </div>
-        <div class="document-part2 box">
+        <div class="document-part2 document-container-child">
             <span class="document-upload-type">{{ document.uploadType }}</span>
-            <span>&nbsp;TBK Lēmums &nbsp;| &nbsp;</span>
-            <span>{{ document.uploadedBy }}</span>
-        </div>
-        <div class="document-part3 box">
-            <span>{{ document.caseNumber }}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            <span>{{ document.contractNumber }}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            <span>{{ document.name }}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            <span>{{ document.debtAmount }}</span>
+            <span class="document-decision">TBK Lēmums</span>
+            <span class="seperate2">{{ document.uploadedBy }}</span>
+        <div class="space3"></div>
+            <span class="seperate">{{ document.caseNumber }}</span>
+            <span class="seperate seperate2">{{ document.contractNumber }}</span>
+            <span class="seperate seperate2">{{ document.name }}</span>
+            <span class="seperate2">{{ document.debtAmount }}</span>
         </div>
     </div>
 </div>
-
-<hr>
 
