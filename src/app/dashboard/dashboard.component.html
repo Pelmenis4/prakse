@@ -22,7 +22,8 @@ class="header"></app-header>
 *ngFor="let documentEl of currentDocuments, let i = index" 
 [document]="documentEl"
 [index]="i"
-[currentPage]="currentPage * 10"></app-dashboard-document>
+[currentPage]="currentPage * 10"
+[currentDocumentsLength]="currentDocuments.length"></app-dashboard-document>
 
 <br>
 <br>

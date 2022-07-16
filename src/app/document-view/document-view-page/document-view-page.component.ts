@@ -13,6 +13,7 @@ export class DocumentViewPageComponent implements OnInit {
   id: number;
   files = [];
   pinned: boolean = false;
+  hide: boolean = false;
 
   constructor(private documentService: DocumentService, private route: ActivatedRoute) { }
 
@@ -30,46 +31,41 @@ export class DocumentViewPageComponent implements OnInit {
   
   // shrinks or unshrinks the side panel
   onPin() {
-    if(this.pinned == false) {
-      this.hideSidePanel()
-      document.getElementById('pin').classList.remove('pin');
-    }
-    else {
-      this.showSidePanel()
-      document.getElementById('pin').classList.add('pin');
-    }
     this.pinned = !this.pinned;
+    this.hide = this.pinned;
   }
 
   // shows the side panel when hovered on it after the pin button is pressed.
   onEnter() {
     if(this.pinned == true) {
-    this.showSidePanel()
+      this.hide = false;
     }
   }
 
   // hides the side panel when hovered on it after the pin button is pressed.
   onLeave() {
   if(this.pinned == true) {
-    this.hideSidePanel()
+    this.hide = true;
     }
   }
 
   //helper functions
-  hideSidePanel() {
-    document.getElementById('arrow-button').classList.add('hidden');
-    document.getElementById('pin-button').classList.add('hidden');
-    document.getElementById('side-panel').classList.remove('side-panel');
-    document.getElementById('side-panel').classList.add('side-panel2');
-    document.getElementById('document-preview').classList.add('hidden');
-  }
+  // got replaced with stuff on the html.
 
-  showSidePanel() {
-    document.getElementById('arrow-button').classList.remove('hidden');
-    document.getElementById('pin-button').classList.remove('hidden');
-    document.getElementById('side-panel').classList.add('side-panel');
-    document.getElementById('side-panel').classList.remove('side-panel2');
-    document.getElementById('document-preview').classList.remove('hidden');
-  }
+  // hideSidePanel() {
+  //   document.getElementById('arrow-button').classList.add('hidden');
+  //   document.getElementById('pin-button').classList.add('hidden');
+  //   document.getElementById('side-panel').classList.remove('side-panel');
+  //   document.getElementById('side-panel').classList.add('side-panel2');
+  //   document.getElementById('document-preview').classList.add('hidden');
+  // }
+
+  // showSidePanel() {
+  //   document.getElementById('arrow-button').classList.remove('hidden');
+  //   document.getElementById('pin-button').classList.remove('hidden');
+  //   document.getElementById('side-panel').classList.add('side-panel');
+  //   document.getElementById('side-panel').classList.remove('side-panel2');
+  //   document.getElementById('document-preview').classList.remove('hidden');
+  // }
 
 }

@@ -12,6 +12,8 @@ export class DocumentViewComponent implements OnInit {
 
   currentPage: number;
 
+  swap: boolean = false;
+
   ngOnInit(): void {
     this.currentPage = this.documentService.currentPage;
   }
@@ -31,9 +33,9 @@ export class DocumentViewComponent implements OnInit {
   //   }
   // }
 
+  // needed to switch classes in the html.
   onSwap() {
-    document.getElementById('view-page').classList.toggle('view-page');
-    document.getElementById('view-data').classList.toggle('document-data');
-    document.getElementById('view-data').classList.toggle('document-data2');
+    this.swap = !this.swap;
+    console.log(this.swap);
   }
 }

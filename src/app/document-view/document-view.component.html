@@ -2,8 +2,12 @@
 
 
 <div style="display: flex;">
-    <app-document-view-data class="document-data" id="view-data"></app-document-view-data>
-    <app-document-view-page class="view-page" id="view-page"
+    <app-document-view-data 
+    [ngClass]="{'document-data': swap == false, 'document-data2': swap == true}"
+    id="view-data"></app-document-view-data>
+    <app-document-view-page 
+    [ngClass]="{'view-page': swap == false}"
+    id="view-page"
     (swapClick)="onSwap()"></app-document-view-page>
 </div>
 

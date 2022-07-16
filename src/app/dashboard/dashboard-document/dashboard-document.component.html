@@ -1,5 +1,5 @@
 
-<div class="document-container" #border>
+<div class="document-container" #border [class.border-bottom]="currentDocumentsLength > index + 1">
     <div class="document-checkbox-position document-container-child">
         <label for="checkbox"></label>
         <input type="checkbox" id="checkbox" name="checkbox">
