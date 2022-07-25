@@ -1,6 +1,6 @@
 
-<div class="data-container" style="margin-bottom: 20px;">
-    <button class="btn btn-success" 
+<div class="button-field">
+    <button class="data-button" 
     (click)="onChangeStatus()"
     [disabled]="this.documents[this.id].personalCode == '' 
     || this.documents[this.id].name == ''
@@ -15,28 +15,40 @@
 </div>
 
 <div class="data-container">
-    <div class="data-number-field data-border">
-        <div class="data-date">{{ documents[id].createdDate | date:'d MMM'  }}</div>
-        <div style="margin-left: 15px;">
-            <div>LĒMUMS</div>
-            <div>{{ documents[id].number }}</div>
+    <div class="data-number-field data-border data-height data-padding-top">
+        <div class="data-date">
+            <div class="date-number">
+                {{ documents[id].createdDate | date:'d' | lowercase  }}
+            </div>
+            <div class="date-month">
+                {{ documents[id].createdDate | date:'MMM' | lowercase  }}
+            </div>
         </div>
-        <div class="data-status">{{ statusMessage }}</div>
+        <div class="data-number-position">
+            <div class="data-font">LĒMUMS</div>
+            <div class="data-font2">{{ documents[id].number }}</div>
+        </div>
+        <div class="data-status">{{ statusMessage }} 
+            <hr>
+        </div>
     </div>
 </div>
 <div class="data-container">
-    <div class="data-border">
-        <div class="data-sent-by">
-            iesūtīja {{ documents[id].uploadedBy }}
-        </div>
+    <div class="data-border2 data-height2 data-sent-by">
+        <span style="color:rgb(175, 175, 175)">
+            Iesūtīja
+        </span>
+        <span class="">
+            {{ documents[id].uploadedBy }}
+        </span>
     </div>
 </div>
 
 <div class="data-container" style="margin-top: 20px">
-        <div class="data-border">
-            <div *ngFor="let decisionRadio of decisionActions, let i = index" class="radio top-border">
-                <label>
-                    <input type="radio" name="decisionAction" 
+        <div class="data-border2">
+            <div *ngFor="let decisionRadio of decisionActions, let i = index" class="radio top-border data-height2">
+                <label class="radio-label">
+                    <input type="radio" name="decisionAction" class=""
                     (click)="onDecision(decisionRadio)" 
                     [checked]="decisionRadio == decisionAction"
                     [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
@@ -53,17 +65,17 @@
                 <label class="data-label">
                     Personas kods
                 </label>
-                <input type="text" class="data-input" 
+                <input type="text"
                 [(ngModel)]="this.documents[this.id].personalCode" 
-                name="personalCode" style="width: 130px;" 
+                name="personalCode" style="width: 120px;" 
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Vārds, Uzvārds
                 </label>
-                <input type="text" class="data-input" 
+                <input type="text"
                 [(ngModel)]="this.documents[this.id].name" 
-                name="name" style="width: 250px;"
+                name="name" style="width: 241px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
             </div>
 
@@ -72,25 +84,25 @@
                 <label class="data-label">
                     Lietas Nr.
                 </label>
-                <input type="text" class="data-input" 
+                <input type="text"
                 [(ngModel)]="this.documents[this.id].caseNumber" 
-                name="caseNumber" style="width: 140px;"
+                name="caseNumber" style="width: 130px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Vieta
                 </label>
-                <input type="text" class="data-input" 
+                <input type="text"
                 [(ngModel)]="this.documents[this.id].location" 
-                name="location" style="width: 170px;"
+                name="location" style="width: 160px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Datums
                 </label>
-                <input type="date" class="data-input" 
+                <input type="date"
                 [(ngModel)]="this.documents[this.id].date" 
-                name="date" style="width: 130px;"
+                name="date" style="width: 120px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
             </div>
 
@@ -99,36 +111,39 @@
                 <label class="data-label">
                     Līguma Nr.
                 </label>
-                <input type="text" class="data-input" 
+                <input type="text"
                 [(ngModel)]="this.documents[this.id].contractNumber" 
-                name="contractNumber" style="width: 140px;"
+                name="contractNumber" style="width: 130px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Līguma datums
                 </label>
-                <input type="date" class="data-input" 
+                <input type="date"
                 [(ngModel)]="this.documents[this.id].contractDate" 
-                name="contractDate" style="width: 130px;"
+                name="contractDate" style="width: 120px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Parāda summa
                 </label>
                 <input type="number" 
-                class="data-input" [(ngModel)]="this.documents[this.id].debtAmount" 
-                name="debtAmount" style="width: 140px;"
+                [(ngModel)]="this.documents[this.id].debtAmount" 
+                name="debtAmount" style="width: 90px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
-                <label class="data-label">
+                <label class="data-label" for="select-wrapper">
                     Rēķina valūta
                 </label>
-                <select [(ngModel)]="this.documents[this.id].debtCurrency" 
-                name="debtCurrency" id="debtCurrency" class="data-select"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                <div class="select-wrapper">
+                    <select [(ngModel)]="this.documents[this.id].debtCurrency" 
+                    name="debtCurrency" id="debtCurrency" class="data-select"
+                    [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                     <option value="EUR">EUR</option>
                     <option value="USD">USD</option>
-                </select>
+                    </select>
+                    <span class="glyphicon glyphicon-triangle-bottom select-arrow"></span>
+                </div>
             </div>
 
             <div class="top-border data-margin-bottom">
@@ -136,16 +151,17 @@
                 <label class="data-label">
                     Tiesa
                 </label>
-                <input type="text" class="data-input" 
+                <input type="text"
                 [(ngModel)]="this.documents[this.id].court" 
-                name="court" style="width: 200px;"
+                name="court" style="width: 193px;"
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Lēmums
                 </label>
+                <div class="textarea-wrapper"></div>
                 <textarea [(ngModel)]="this.documents[this.id].decision" 
-                name="decision" id="" rows="3" class="data-text-area data-input"
+                name="decision" id="" rows="3" class="data-text-area "
                 [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'"></textarea>
             </div>
             <br>

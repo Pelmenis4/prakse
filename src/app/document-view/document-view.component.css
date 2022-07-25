@@ -12,7 +12,7 @@
 
 .document-data {
     position: absolute;
-    height: 631px;
+    height: 800px;
     overflow-y: scroll;
     overflow-x: hidden;
 }

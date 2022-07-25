@@ -1,15 +1,45 @@
 .data-container {
-    background-color: rgb(243, 241, 241);
-    margin-left: 10px;
-    width: 500px;
-    padding-right: 20px;
+    margin-left: 15px;
+    width: 420px;
+    margin-right: 15px;
+}
+
+.data-height {
+    height: 81px;
+}
+
+.data-height2 {
+    height: 42px;
 }
 
 .data-border {
     border-style: solid;
-    border-width: 1px;
-    border-color: grey;
+    border-width: 2px;
+    border-color: rgb(227, 227, 227);;
     border-radius: 3px;
+    background-color: rgb(243, 241, 241);
+}
+
+.top-border {
+    border-top: 2px solid rgb(227, 227, 227);
+    background-color: rgb(243, 241, 241);
+
+}
+
+.data-border2 {
+    border-bottom: solid 2px rgb(227, 227, 227);;
+    border-left: solid 2px rgb(227, 227, 227);;
+    border-right: solid 2px rgb(227, 227, 227);;
+    border-radius: 3px;
+    background-color: rgb(243, 241, 241);
+}
+
+.button-field {
+    background-color: rgb(244, 244, 244);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-bottom: 15px;
 }
 
 /* Lēmums */
@@ -21,8 +51,9 @@
 
 .data-date {
     font-weight: bold;
-    width: 5%;
     text-align: center;
+    color: rgb(143,105,174);
+    margin-top: -3px;
 }
 
 .data-decision {
@@ -31,23 +62,38 @@
 
 
 .data-status {
-    background-color: lightgrey;
-    color: grey;
-    margin-left: 100px;
-    margin-top: 5px;
+    position: absolute;
+    right: 31px;
+    background-color: rgb(214, 214, 214);
+    color: rgb(159, 159, 159);
+    margin-top: 9px;
     padding-top: 4px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-bottom: 3px;
+    padding-left: 38px;
+    padding-right: 38px;
     height: 30px;
     border-style: solid;
     border-width: 1px;
-    border-radius: 5px;
+    border-color: rgb(209, 209, 209);
+    border-radius: 4px;
+    text-align: center;
+}
+/* width: 145px; */
+/* margin-left: 68px; */
+
+.data-status hr {
+    width: 49px;
+    border-top: 3px solid black;
+    margin-top: 2px;
+    margin-left: -39px;
+    border-color: green;
+    border-bottom-left-radius: 4px;
 }
 
 .data-sent-by {
-    padding: 7px;
-    margin-left: 7px;
+    padding-left: 16px;
+    padding-top: 12px;
+    font-size: 12px;
 }
 
 
@@ -59,10 +105,13 @@
     margin: 0;
 }
 
-.top-border {
-    border-top: 1px solid;
-
+.radio-label {
+    margin-top: 3.5px;
+    margin-left: 10px;
+    font-size: 16px;
 }
+
+
 
 .data-break {
     height: 20px;
@@ -70,7 +119,7 @@
 }
 
 .data-margin-bottom {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 /* Inputs */
@@ -103,10 +152,207 @@
 
 .data-text-area {
     width: 230px;
-    margin-top: 30px;
     vertical-align: top;
+    margin-left: -20px;
+    margin-top: 12px;
 }
 
 .data-text {
     margin-left: 15px;
 }
+
+
+  /* smaller things */
+
+  .date-number {
+    font-size: 18px;
+  }
+
+  .date-month {
+    margin-top: -5.2px;
+    font-size: 16px;
+  }
+
+  .data-font {
+    font-size: 18px;
+    color: black;
+  }
+  
+  .data-font2 {
+    font-size: 16px;
+    margin-top: -5px;
+    color: black;
+  }
+
+  .data-padding-top {
+    padding-top: 20px;
+  }
+
+  .data-number-position {
+    margin-left: 15px;
+    margin-top: -3px;
+  }
+
+  .data-button {
+    background-color: rgb(71, 168, 95);
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
+
+
+
+
+
+
+
+
+  /* inputs */
+
+  
+input[type='radio'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(143,105,174);
+    border-radius: 50%;
+    outline: none;
+    left: 36px;
+    top: 7px;
+  }
+  
+  input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;    
+    border-radius: 50%;    
+  }
+  input[type='radio']:checked:before {
+    background:purple;
+  }
+
+
+  input[type=text] {
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 0.5px;
+    margin-left: -20px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.2s;
+    outline: none;
+    border-left: 3px solid green;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  
+  input[type=text]:focus {
+    border: 1px solid #555;
+  }
+
+
+  input[type=number] {
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 0.5px;
+    margin-left: -20px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.2s;
+    outline: none;
+    border-left: 3px solid green;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  
+  input[type=number]:focus {
+    border: 1px solid #555;
+  }
+
+  input[type=date] {
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 0.5px;
+    margin-left: -20px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.2s;
+    outline: none;
+    border-left: 3px solid green;
+    border-radius: 3px;
+    font-size: 13px;
+    background-color: rgb(242, 242, 242);
+  }
+  
+  input[type=date]:focus {
+    border: 1px solid #555;
+  }
+
+
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: green;
+    width: 80px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    background: rgb(227, 227, 227);
+    border: none;
+    border-radius: 3px;
+}
+.select-wrapper {
+    margin-left: 116px;
+    margin-top: -37px;
+    width: 80px;
+    position: relative;
+    border-radius: 2px;
+    background-color: rgb(214, 213, 213);
+}
+
+.select-arrow {
+    position: absolute;
+    zoom: 80%;
+    left: 77px;
+    top: 11px;
+}
+
+
+textarea {
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 0.5px;
+    margin-left: -20px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.2s;
+    outline: none;
+    border-left: 3px solid green;
+    border-radius: 3px;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+  }
+  
+  textarea:focus {
+    border: 1px solid #555;
+  }
+
+.textarea-wrapper {
+    position: absolute;
+}
+
