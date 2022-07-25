@@ -14,6 +14,7 @@ export class DocumentViewPageComponent implements OnInit {
   files = [];
   pinned: boolean = false;
   hide: boolean = false;
+  swapped: boolean = false;
 
   constructor(private documentService: DocumentService, private route: ActivatedRoute) { }
 
@@ -27,6 +28,7 @@ export class DocumentViewPageComponent implements OnInit {
   // send an event to swap the places of view-document and view-data
   onSwap() {
     this.swapClick.emit();
+    this.swapped = !this.swapped;
   }
   
   // shrinks or unshrinks the side panel

@@ -5,14 +5,13 @@
 
 .view-page {
     position: absolute;
-    left: 845px;
-
+    right: 0;
 }
 
 
 .document-data {
     position: absolute;
-    height: 800px;
+    height: 849px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -21,8 +20,12 @@
 
 .document-data2 {
     position: absolute;
-    height: 631px;
     overflow-y: scroll;
     overflow-x: hidden;
-    left: 995px;
+    right: 0;
+    height: 849px;
+}
+
+.view-page-size {
+    zoom: 134.3%;
 }

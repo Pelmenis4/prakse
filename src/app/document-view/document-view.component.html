@@ -6,13 +6,9 @@
     [ngClass]="{'document-data': swap == false, 'document-data2': swap == true}"
     id="view-data"></app-document-view-data>
     <app-document-view-page 
+    class="view-page-size"
     [ngClass]="{'view-page': swap == false}"
     id="view-page"
     (swapClick)="onSwap()"></app-document-view-page>
 </div>
-
-
-
-<!-- <div style="display: flex; width: 100%; ">
-</div> -->
 
