@@ -1,9 +1,28 @@
-.page-holder {
+.page-holder, .page-holder2, .page-holder-left, .page-holder-left2 {
     display: flex;
     background-color: rgb(88, 88, 88);
     height: 100%;
     width: 550px;
+    position: fixed; 
+    transition: 0.5s;
 }
+
+.page-holder{
+    left: 565px;
+}
+
+.page-holder2 {
+    left: 669px;
+}
+
+.page-holder-left {
+    left: 124px;
+}
+
+.page-holder-left2 {
+    left: 20px;
+}
+
 
 .page-image {
     max-width: 78.7%;
@@ -25,31 +44,36 @@
     background-color: rgb(88, 88, 88);
     margin-left: 3px;
     transition: 0.5s;
+    width: 120px;
 }
 
 /* position: fixed */
 
 .side-panel {
-    width: 120px;
+    position: fixed;
+    left: 1116px;
 }
 
 
 .side-panel2 {
-    width: 15px;
+    position: fixed;
+    left: 1220px;
 }
 
-.side-panel-left {
+.side-panel-left, .side-panel-left2 {
     background-color: rgb(88, 88, 88);
     margin-right: 3px;
     width: 120px;
     transition: 0.5s;
+    position: fixed;
+}
+
+.side-panel-left {
+    left: 0px;
 }
 
 .side-panel-left2 {
-    background-color: rgb(88, 88, 88);
-    margin-right: 3px;
-    width: 15px;
-    transition: 0.5s;
+    left: -104px;
 }
 
 .square-button {
@@ -69,6 +93,7 @@
 .document-preview {
     margin-top: 3px;
     width: 127px;
+    height: 100vh;
 }
 
 .pin {
