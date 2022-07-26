@@ -1,5 +1,5 @@
 
-enum DecisionActionEnum {
+  enum DecisionActionEnum {
   FORCE_EXECUTION = 'FORCE_EXECUTION',
   NOTIFICATION_TO_APPLICANT = 'NOTIFICATION_TO_APPLICANT',
   NOTIFICATION_TO_COURT = 'NOTIFICATION_TO_COURT',
@@ -34,7 +34,7 @@ enum FieldNameEnum {
   DECISION = 'decision',
 }
 
-function getCCBNote(decisionAction: DecisionActionEnum, documentValues: any[] = []): string {
+export function getCCBNote(decisionAction, documentValues: any[] = [], decisionActionLatvian): string {
 
   // shorthand function for getting document value based on name
   const getValue = function (fieldName: FieldNameEnum): string {
@@ -66,7 +66,9 @@ function getCCBNote(decisionAction: DecisionActionEnum, documentValues: any[] = 
   }
 
   // add the decision "ACC" and the contract number
-  ccbNote += ` ${getValue(FieldNameEnum.DECISION)} ACC ${getValue(FieldNameEnum.CONTRACT_NUMBER)}`;
+  ccbNote += ' ' + decisionActionLatvian + `  ACC ${getValue(FieldNameEnum.CONTRACT_NUMBER)}`;
+  
+  // ccbNote += ` ${getValue(FieldNameEnum.DECISION)} ACC ${getValue(FieldNameEnum.CONTRACT_NUMBER)}`;
 
   return ccbNote;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DocumentService } from 'src/app/shared/document.service';
+import { getCCBNote } from 'src/app/shared/RequiredData';
 
 @Component({
   selector: 'app-document-view-data',
@@ -15,20 +16,25 @@ export class DocumentViewDataComponent implements OnInit {
   buttonEnabled: boolean = true;
 
   // for the radio buttons
-  decisionActions = ['Nodot piespiedu izpildīšanai', 'Paziņojums pieteicējam',
-  'Paziņojums tiesai', 'Atteikt pieņemt', 'Apturēt izpildu lietvedību',
-  'Izbeigt tiesvedību', 'Atstāt Bez izskatīšanas'];
+  decisionActions = ['nodot piespiedu izpildīšanai', 'paziņojums pieteicējam',
+  'paziņojums tiesai', 'atteikt pieņemt', 'apturēt izpildu lietvedību',
+  'izbeigt tiesvedību', 'atstāt bez izskatīšanas'];
 
   decisionAction: string;
+  decisionActionCaps: string;
+  decisionActionMessage: string;
 
 
   
-  constructor(private route: ActivatedRoute, private documentService: DocumentService) { }
+  constructor(private route: ActivatedRoute, private documentService: DocumentService,) { }
   
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'] - 1;  //gets the id of the document from the url
     this.documents = this.documentService.documents;
     this.decisionAction = this.documentService.translateDecisionActionToLatvian(this.documents[this.id].decisionAction); // translates the decisionAction
+    this.decisionActionCaps = this.documentService.documents[this.id].decisionAction;
+    this.decisionActionMessage = getCCBNote(this.decisionActionCaps, this.documentService.documents[this.id].values, this.decisionAction)
+    console.log(this.decisionActionMessage);
     this.changeStatus();
   }
 
@@ -71,5 +77,24 @@ export class DocumentViewDataComponent implements OnInit {
     this.changeStatus();
     this.buttonEnabled = false;
   }
+
+  // conditions to disable the 'Sūtīt uz CCB' button.
+  disableButton() {
+    if(this.documents[this.id].personalCode == '' 
+    || this.documents[this.id].name == ''
+    || this.documents[this.id].caseNumber== ''
+    || this.documents[this.id].location == ''
+    || this.documents[this.id].contractNumber == ''
+    || this.documents[this.id].debtAmount == null
+    || this.documents[this.id].court == ''
+    || this.documents[this.id].decision == ''
+    || this.statusMessage == 'Nosūtīts uz CCB'
+    || this.buttonEnabled == false){
+      return true;
+    }
+
+  }
+
+
 }
 

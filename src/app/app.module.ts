@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DocumentViewComponent } from './document-view/document-view.component';
 import { DocumentViewDataComponent } from './document-view/document-view-data/document-view-data.component';
 import { DocumentViewPageComponent } from './document-view/document-view-page/document-view-page.component';
+import { SentencePipe } from './shared/sentence.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DocumentViewPageComponent } from './document-view/document-view-page/do
     DocumentViewComponent,
     DocumentViewDataComponent,
     DocumentViewPageComponent,
+    SentencePipe
   ],
   imports: [
     BrowserModule,

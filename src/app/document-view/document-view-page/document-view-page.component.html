@@ -24,6 +24,8 @@
             <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
             <div class="glyphicon glyphicon-triangle-right arrow-right"></div>
         </div>
+
+        <!-- css :hover -->
         <div *ngIf="swapped == false"
         class="side-panel" id="side-panel" (mouseenter)="onEnter()" (mouseleave)="onLeave()"
         [ngClass]="{'side-panel': hide == false, 'side-panel2': hide == true}">

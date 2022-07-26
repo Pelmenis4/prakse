@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit} from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { DocumentService } from '../shared/document.service';
 import { DATA } from '../shared/data';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -58,15 +57,6 @@ export class DashboardComponent implements OnInit {
     }
   }
   
-  onAddDocument() {   //shows the form for adding a document when clicking the add document button
-    // if(this.addDocument == false) {
-    //   this.addDocument = true;
-    // }
-    // else {
-    //   this.addDocument = false;
-    // }
-    this.addDocument = !this.addDocument
-  }
 
   onAddDocuments() {  //adds 10 documents to the document array
     for (let i = 0; i < 10; i++) {
@@ -89,8 +79,8 @@ export class DashboardComponent implements OnInit {
         debtCurrency: DATA.documents[i % 2].values.find(v => v.fieldName == 'debtCurrency')?.value,
         court: DATA.documents[i % 2].values.find(v => v.fieldName == 'court')?.value,
         decision: DATA.documents[i % 2].values.find(v => v.fieldName == 'decision')?.value,
-        files: DATA.documents[i % 2].files
-
+        files: DATA.documents[i % 2].files,
+        values: DATA.documents[i % 2].values
       }
 
       this.documentService.documents.push(document);
@@ -101,36 +91,6 @@ export class DashboardComponent implements OnInit {
     this.documentCount = this.documentService.documents.length;
   }
 
-
-  onSubmit(form: NgForm) {   // creates a new document and adds it to the document array after submitting the form
-    console.log(form);
-    this.createdDocument = {
-     number: form.value.number,
-     createdDate: form.value.createdDate,
-     decisionAction: form.value.decisionAction,
-     uploadType: form.value.uploadType,
-     uploadedBy: form.value.uploadedBy,
-     caseNumber: form.value.caseNumber,
-     contractNumber: form.value.contractNumber,
-     name: form.value.name,
-     debtAmount: form.value.debtAmount,
-     status: form.value.status,
-     personalCode: form.value.personalCode,
-     location: form.value.location,
-     date: form.value.date,
-     contractDate: form.value.contractDate,
-     debtCurrency: form.value.debtCurrency,
-     court: form.value.court,
-     decision: form.value.decision
-    }
-    
-    
-    this.documentService.documents.push(this.createdDocument);
-    this.documentCount = this.documentService.documents.length;
-    this.showCurrentDocuments();
-    
-
-  }
 
   // if there are less than 10 documents, adds all of the documents to the currentDocument array,
   // if there are more than 10 documents, adds 10 documents depending on which page youre on.

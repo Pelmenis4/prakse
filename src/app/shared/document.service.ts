@@ -77,7 +77,8 @@ export class DocumentService {
                 debtCurrency: DATA.documents[i].values.find(v => v.fieldName == 'debtCurrency')?.value,
                 court: DATA.documents[i].values.find(v => v.fieldName == 'court')?.value,
                 decision: DATA.documents[i].values.find(v => v.fieldName == 'decision')?.value,
-                files: DATA.documents[i].files
+                files: DATA.documents[i].files,
+                values: DATA.documents[i].values
             }
             this.documents.push(document)
         }
@@ -87,38 +88,38 @@ export class DocumentService {
     // translates decisionAction to latvian.
     translateDecisionActionToLatvian(decisionAction) {
         if (decisionAction == 'FORCE_EXECUTION')
-            return 'Nodot piespiedu izpildīšanai';
+            return 'nodot piespiedu izpildīšanai';
         else if (decisionAction == 'NOTIFICATION_TO_APPLICANT')
-            return 'Paziņojums pieteicējam';
+            return 'paziņojums pieteicējam';
         else if (decisionAction == 'NOTIFICATION_TO_COURT')
-            return 'Paziņojums tiesai';
+            return 'paziņojums tiesai';
         else if (decisionAction == 'REFUSE_TO_ACCEPT')
-            return 'Atteikt pieņemt';
+            return 'atteikt pieņemt';
         else if (decisionAction == 'STOP_ENFORCEMENT_PROCEEDINGS')
-            return 'Apturēt izpildu lietvedību';
+            return 'apturēt izpildu lietvedību';
         else if (decisionAction == 'TERMINATE_THE_PROCEEDINGS')
-            return 'Izbeigt tiesvedību';
+            return 'izbeigt tiesvedību';
         else if (decisionAction == 'WITHOUT_CONSIDERATION')
-            return 'Atstāt Bez izskatīšanas';
+            return 'atstāt bez izskatīšanas';
         else
             return '';
     }
 
     // translates decisionAction to english from latvian in the document-view-data component.
     translateDecisionActionToEnglish(decisionAction) {
-        if (decisionAction == 'Nodot piespiedu izpildīšanai')
+        if (decisionAction == 'nodot piespiedu izpildīšanai')
             return 'FORCE_EXECUTION';
-        else if (decisionAction == 'Paziņojums pieteicējam')
+        else if (decisionAction == 'paziņojums pieteicējam')
             return 'NOTIFICATION_TO_APPLICANT';
-        else if (decisionAction == 'Paziņojums tiesai')
+        else if (decisionAction == 'paziņojums tiesai')
             return 'NOTIFICATION_TO_COURT';
-        else if (decisionAction == 'Atteikt pieņemt')
+        else if (decisionAction == 'atteikt pieņemt')
             return 'REFUSE_TO_ACCEPT';
-        else if (decisionAction == 'Apturēt izpildu lietvedību')
+        else if (decisionAction == 'apturēt izpildu lietvedību')
             return 'STOP_ENFORCEMENT_PROCEEDINGS';
-        else if (decisionAction == 'Izbeigt tiesvedību')
+        else if (decisionAction == 'izbeigt tiesvedību')
             return 'TERMINATE_THE_PROCEEDINGS';
-        else if (decisionAction == 'Atstāt Bez izskatīšanas')
+        else if (decisionAction == 'atstāt bez izskatīšanas')
             return 'WITHOUT_CONSIDERATION';
         else
             return '';

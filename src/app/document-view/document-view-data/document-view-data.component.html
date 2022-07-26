@@ -1,17 +1,8 @@
 
 <div class="button-field">
-    <button class="data-button" 
+    <button class="btn data-button" 
     (click)="onChangeStatus()"
-    [disabled]="this.documents[this.id].personalCode == '' 
-    || this.documents[this.id].name == ''
-    || this.documents[this.id].caseNumber== ''
-    || this.documents[this.id].location == ''
-    || this.documents[this.id].contractNumber == ''
-    || this.documents[this.id].debtAmount == null
-    || this.documents[this.id].court == ''
-    || this.documents[this.id].decision == ''
-    || this.statusMessage == 'Nosūtīts uz CCB'
-    || this.buttonEnabled == false">Sūtīt uz CCB</button>
+    [disabled]="disableButton()">Sūtīt uz CCB</button>
 </div>
 
 <div class="data-container">
@@ -52,7 +43,7 @@
                     (click)="onDecision(decisionRadio)" 
                     [checked]="decisionRadio == decisionAction"
                     [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
-                    {{ decisionRadio }}
+                    {{ decisionRadio | sentence }}
                 </label>
             </div>
         </div>
@@ -167,7 +158,7 @@
             <br>
             <div class="top-border data-margin-bottom" style="margin-top: -5px;">
                 <div class="data-title">Paredzētā CCB piezīme</div>
-                <div class="data-text">Saņemts ............</div>
+                <div class="data-text">{{ decisionActionMessage }}</div>
             </div>
         </div>
 </div>
