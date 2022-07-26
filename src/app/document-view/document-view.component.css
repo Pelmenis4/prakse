@@ -25,3 +25,12 @@
 .view-page-size {
     zoom: 134.3%;
 }
+
+
+.button-field {
+    background-color: rgb(244, 244, 244);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}

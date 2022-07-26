@@ -13,7 +13,8 @@
                         </div>
                     </div>
                     <div class="document-preview-background"
-                    [ngClass]="{'document-preview-background-left': hide == false, 'document-preview-background-left2': hide == true}"></div>
+                    [ngClass]="{'document-preview-background-left': hide == false, 'document-preview-background-left2': hide == true,
+                    'transition': transitioning == true}"></div>
                     <div id="document-preview">
                         <div class="document-preview" *ngFor="let file of files">
                             <img src="assets/images/emptypage.jpg" alt="page" class="page-preview">
@@ -48,7 +49,8 @@
                         </div>
                     </div>
                     <div class="document-preview-background"
-                    [ngClass]="{'document-preview-background': hide == false, 'document-preview-background2': hide == true}"></div>
+                    [ngClass]="{'document-preview-background': hide == false, 'document-preview-background2': hide == true,
+                    'transition': transitioning == true}"></div>
                     <div id="document-preview">
                         <div class="document-preview" *ngFor="let file of files">
                             <img src="assets/images/emptypage.jpg" alt="page" class="page-preview">

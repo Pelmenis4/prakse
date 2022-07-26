@@ -133,7 +133,6 @@
     position: fixed;
     top: 50px;
     z-index: -1;
-    transition: 0.5s;
 }
 
 .document-preview-background-left {
