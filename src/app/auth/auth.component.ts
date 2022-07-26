@@ -52,75 +52,30 @@ export class AuthComponent implements OnInit, AfterViewInit {
     }
   }
 
-
   usernameAnimation() {
     this.usernameElement.classList.add('animation1');
-    this.animation2Interval = setInterval(() => this.animation2(), 400);
+    this.animation2Interval = setInterval(() => this.animations('animation1', 'animation2'), 400);
     setTimeout(() => clearInterval(this.animation2Interval), 400);
-    this.animation3Interval = setInterval(() => this.animation3(), 800);
+    this.animation3Interval = setInterval(() => this.animations('animation2', 'animation3'), 800);
     setTimeout(() => clearInterval(this.animation3Interval), 800);
-    this.animation4Interval = setInterval(() => this.animation4(), 1200);
+    this.animation4Interval = setInterval(() => this.animations('animation3', 'animation4'), 1200);
     setTimeout(() => clearInterval(this.animation4Interval), 1200);
-    this.animation5Interval = setInterval(() => this.animation5(), 1400);
+    this.animation5Interval = setInterval(() => this.animations('animation4', 'animation5'), 1400);
     setTimeout(() => clearInterval(this.animation5Interval), 1400);
-    this.animation6Interval = setInterval(() => this.animation6(), 3000);
+    this.animation6Interval = setInterval(() => this.animations('animation5', 'animation6'), 3000);
     setTimeout(() => clearInterval(this.animation6Interval), 3000);
-    this.animation7Interval = setInterval(() => this.animation7(), 3300);
+    this.animation7Interval = setInterval(() => this.animations('animation6', 'animation7'), 3300);
     setTimeout(() => clearInterval(this.animation7Interval), 3300);
-    this.animation8Interval = setInterval(() => this.animation8(), 3500);
+    this.animation8Interval = setInterval(() => this.animations('animation7', 'animation8'), 3500);
     setTimeout(() => clearInterval(this.animation8Interval), 3500);
-    this.animation9Interval = setInterval(() => this.animation9(), 3700);
+    this.animation9Interval = setInterval(() => this.animations('animation8', 'animation9'), 3700);
     setTimeout(() => clearInterval(this.animation9Interval), 3700);
   }
 
-
-
-
-  animation2() {
-    this.usernameElement.classList.remove('animation1');
-    this.usernameElement.classList.add('animation2');
+  animations(removeAnimation: string, addAnimation: string) {
+    this.usernameElement.classList.remove(removeAnimation);
+    this.usernameElement.classList.add(addAnimation);
   }
-
-  animation3() {
-    this.usernameElement.classList.remove('animation2');
-    this.usernameElement.classList.add('animation3');
-  }
-
-  animation4() {
-    this.usernameElement.classList.remove('animation3');
-    this.usernameElement.classList.add('animation4');
-  }
-
-  animation5() {
-    this.usernameElement.classList.remove('animation4');
-    this.usernameElement.classList.add('animation5');
-  }
-
-  animation6() {
-    this.usernameElement.classList.remove('animation5');
-    this.usernameElement.classList.add('animation6');
-  }
-
-  animation7() {
-    this.usernameElement.classList.remove('animation6');
-    this.usernameElement.classList.add('animation7');
-  }
-
-  animation8() {
-    this.usernameElement.classList.remove('animation7');
-    this.usernameElement.classList.add('animation8');
-  }
-
-  animation9() {
-    this.usernameElement.classList.remove('animation8');
-    this.usernameElement.classList.add('animation9');
-  }
-  animation10() {
-    this.usernameElement.classList.remove('animation9');
-    this.usernameElement.classList.add('animation10');
-  }
-
-
   
   passwordAnimation() {
     this.passwordElement.classList.add('pwAnimation2');
