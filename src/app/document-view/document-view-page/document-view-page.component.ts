@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DocumentService } from 'src/app/shared/document.service';
 
@@ -15,6 +15,8 @@ export class DocumentViewPageComponent implements OnInit {
   pinned: boolean = false;
   hide: boolean = false;
   swapped: boolean = false;
+  transitioning: boolean = false;
+  interval;
 
   constructor(private documentService: DocumentService, private route: ActivatedRoute) { }
 
@@ -22,8 +24,10 @@ export class DocumentViewPageComponent implements OnInit {
     // gets the document index from the URL
     this.id = this.route.snapshot.params['id'] - 1; 
     // gets the files from the document to know how many pages to display
-    this.files = this.documentService.documents[this.id].files; 
+    this.files = this.documentService.documents[this.id].files;
   }
+
+
   
   // send an event to swap the places of view-document and view-data
   onSwap() {
@@ -35,6 +39,7 @@ export class DocumentViewPageComponent implements OnInit {
   onPin() {
     this.pinned = !this.pinned;
     this.hide = this.pinned;
+    this.transition();
   }
 
   // shows the side panel when hovered on it after the pin button is pressed.
@@ -42,6 +47,7 @@ export class DocumentViewPageComponent implements OnInit {
     if(this.pinned == true) {
       this.hide = false;
     }
+    this.transition();
   }
 
   // hides the side panel when hovered on it after the pin button is pressed.
@@ -49,6 +55,7 @@ export class DocumentViewPageComponent implements OnInit {
   if(this.pinned == true) {
     this.hide = true;
     }
+    this.transition();
   }
 
   //helper functions
@@ -70,4 +77,16 @@ export class DocumentViewPageComponent implements OnInit {
   //   document.getElementById('document-preview').classList.remove('hidden');
   // }
 
+
+  // gives the tranistion class to the page-holder only when its needed.
+  transition() {
+    clearInterval(this.interval)
+    this.interval = setInterval(() => this.endtransition(), 500)
+    this.transitioning = true;
+    this.interval;
+  }
+
+  endtransition() {
+    this.transitioning = false;
+  }
 }

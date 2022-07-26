@@ -1,18 +1,17 @@
 .page-holder, .page-holder2, .page-holder-left, .page-holder-left2 {
     display: flex;
     background-color: rgb(88, 88, 88);
-    height: 100%;
-    width: 550px;
+    height: 100vh;
+    width: calc(20vw + 20vh);
     position: fixed; 
-    transition: 0.5s;
 }
 
 .page-holder{
-    left: 565px;
+    right: 125px;
 }
 
 .page-holder2 {
-    left: 669px;
+    right: 21px;
 }
 
 .page-holder-left {
@@ -26,18 +25,23 @@
 
 .page-image {
     max-width: 78.7%;
-    height: auto;
+    height: calc(60px + 60vh);
     margin-left: 10px;
     margin-top: 10px;
-    margin-bottom: 10px;
+ 
 }
 
+.page-preview {
+    height: 142px;
+    margin-left: 9.5px;
+}
 .arrow-right {
-    margin-left: 10px;
+    position: absolute;
     cursor: pointer;
     font-size: 18px;
     color: lightgrey;
-    margin-top: 50%;
+    top: 35%;
+    right: calc(4vw + 5px);
 }
 
 .side-panel, .side-panel2 {
@@ -51,13 +55,13 @@
 
 .side-panel {
     position: fixed;
-    left: 1116px;
+    right: 0;
 }
 
 
 .side-panel2 {
     position: fixed;
-    left: 1220px;
+    right: -104px;
 }
 
 .side-panel-left, .side-panel-left2 {
@@ -93,9 +97,49 @@
 .document-preview {
     margin-top: 3px;
     width: 127px;
-    height: 100vh;
+    height: 155px;
 }
 
 .pin {
     transform: rotate(-45deg);
+}
+
+.transition {
+    transition: 0.5s;
+}
+
+.document-preview-background, .document-preview-background2{
+    background-color: rgb(88, 88, 88);
+    width: 120px;
+    height: 100vh;
+    position: fixed;
+    top: 50px;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.document-preview-background {
+    right: 0px;
+}
+
+.document-preview-background2 {
+    right: -104px;
+}
+
+.document-preview-background-left, .document-preview-background-left2 {
+    background-color: rgb(88, 88, 88);
+    width: 120px;
+    height: 100vh;
+    position: fixed;
+    top: 50px;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.document-preview-background-left {
+    left: 0px;
+}
+
+.document-preview-background-left2 {
+    left: -104px;
 }

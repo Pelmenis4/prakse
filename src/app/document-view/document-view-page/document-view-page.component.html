@@ -12,21 +12,24 @@
                             [ngClass]="{'pin': pinned == false}"></div>
                         </div>
                     </div>
+                    <div class="document-preview-background"
+                    [ngClass]="{'document-preview-background-left': hide == false, 'document-preview-background-left2': hide == true}"></div>
                     <div id="document-preview">
                         <div class="document-preview" *ngFor="let file of files">
-                            <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
+                            <img src="assets/images/emptypage.jpg" alt="page" class="page-preview">
                         </div>
                     </div>
                 </div>
 
         <div *ngIf="swapped == false"
-        class="page-holder"[ngClass]="{'page-holder': hide == false, 'page-holder2': hide == true}">
+        class="page-holder"[ngClass]="{'page-holder': hide == false, 'page-holder2': hide == true, 'transition': transitioning == true}">
             <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
              <div class="glyphicon glyphicon-triangle-right arrow-right"></div>
         </div>
 
         <div *ngIf="swapped == true"
-        class="page-holder-left" [ngClass]="{'page-holder-left': hide == false, 'page-holder-left2': hide == true}">
+        class="page-holder-left" [ngClass]="{'page-holder-left': hide == false, 'page-holder-left2': hide == true,
+        'transition': transitioning == true}">
             <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
              <div class="glyphicon glyphicon-triangle-right arrow-right"></div>
         </div>
@@ -44,32 +47,14 @@
                             [ngClass]="{'pin': pinned == false}"></div>
                         </div>
                     </div>
+                    <div class="document-preview-background"
+                    [ngClass]="{'document-preview-background': hide == false, 'document-preview-background2': hide == true}"></div>
                     <div id="document-preview">
                         <div class="document-preview" *ngFor="let file of files">
-                            <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
+                            <img src="assets/images/emptypage.jpg" alt="page" class="page-preview">
                         </div>
                     </div>
                 </div>
         </div>
 
 
-    <!-- <div *ngIf="swapped == false"
-        class="side-panel" id="side-panel" (mouseenter)="onEnter()" (mouseleave)="onLeave()"
-        [ngClass]="{'side-panel': hide == false, 'side-panel2': hide == true}">
-            <div style="display: flex;">
-                <div class="square-button" id="arrow-button" 
-                [class.hidden]="hide">
-                    <div class="glyphicon glyphicon-resize-horizontal button-symbol" (click)="onSwap()"></div>
-                </div>
-                <div class="square-button" style="margin-left: 30px" id="pin-button"
-                [class.hidden]="hide">
-                    <div class="glyphicon glyphicon-pushpin button-symbol pin" (click)="onPin()" id="pin"
-                    [ngClass]="{'pin': pinned == false}"></div>
-                </div>
-            </div>
-            <div id="document-preview" [class.hidden]="hide">
-                <div class="document-preview" *ngFor="let file of files">
-                    <img src="assets/images/emptypage.jpg" alt="page" class="page-image">
-                </div>
-            </div>
-        </div> -->
