@@ -9,15 +9,15 @@
     <div class="data-number-field data-border data-height data-padding-top">
         <div class="data-date">
             <div class="date-number">
-                {{ documents[id].createdDate | date:'d' | lowercase  }}
+                {{ document.createdDate | date:'d' | lowercase  }}
             </div>
             <div class="date-month">
-                {{ documents[id].createdDate | date:'MMM' | lowercase  }}
+                {{ document.createdDate | date:'MMM' | lowercase  }}
             </div>
         </div>
         <div class="data-number-position">
             <div class="data-font">LĒMUMS</div>
-            <div class="data-font2">{{ documents[id].number }}</div>
+            <div class="data-font2">{{ document.number }}</div>
         </div>
         <div class="data-status">{{ statusMessage }} 
             <hr>
@@ -30,7 +30,7 @@
             Iesūtīja
         </span>
         <span class="">
-            {{ documents[id].uploadedBy }}
+            {{ document.uploadedBy }}
         </span>
     </div>
 </div>
@@ -42,7 +42,7 @@
                     <input type="radio" name="decisionAction" class=""
                     (click)="onDecision(decisionRadio)" 
                     [checked]="decisionRadio == decisionAction"
-                    [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                    [disabled]="this.document.status == 'SENT_TO_CCB'">
                     {{ decisionRadio | sentence }}
                 </label>
             </div>
@@ -57,17 +57,17 @@
                     Personas kods
                 </label>
                 <input type="text"
-                [(ngModel)]="this.documents[this.id].personalCode" 
+                [(ngModel)]="this.document.personalCode" 
                 name="personalCode" style="width: 120px;" 
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Vārds, Uzvārds
                 </label>
                 <input type="text"
-                [(ngModel)]="this.documents[this.id].name" 
+                [(ngModel)]="this.document.name" 
                 name="name" style="width: 241px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
             </div>
 
             <div class="top-border data-margin-bottom">
@@ -76,25 +76,25 @@
                     Lietas Nr.
                 </label>
                 <input type="text"
-                [(ngModel)]="this.documents[this.id].caseNumber" 
+                [(ngModel)]="this.document.caseNumber" 
                 name="caseNumber" style="width: 130px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Vieta
                 </label>
                 <input type="text"
-                [(ngModel)]="this.documents[this.id].location" 
+                [(ngModel)]="this.document.location" 
                 name="location" style="width: 160px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Datums
                 </label>
                 <input type="date"
-                [(ngModel)]="this.documents[this.id].date" 
+                [(ngModel)]="this.document.date" 
                 name="date" style="width: 120px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
             </div>
 
             <div class="top-border data-margin-bottom">
@@ -103,33 +103,33 @@
                     Līguma Nr.
                 </label>
                 <input type="text"
-                [(ngModel)]="this.documents[this.id].contractNumber" 
+                [(ngModel)]="this.document.contractNumber" 
                 name="contractNumber" style="width: 130px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Līguma datums
                 </label>
                 <input type="date"
-                [(ngModel)]="this.documents[this.id].contractDate" 
+                [(ngModel)]="this.document.contractDate" 
                 name="contractDate" style="width: 120px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Parāda summa
                 </label>
                 <input type="number" 
-                [(ngModel)]="this.documents[this.id].debtAmount" 
+                [(ngModel)]="this.document.debtAmount" 
                 name="debtAmount" style="width: 90px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label" for="select-wrapper">
                     Rēķina valūta
                 </label>
                 <div class="select-wrapper">
-                    <select [(ngModel)]="this.documents[this.id].debtCurrency" 
+                    <select [(ngModel)]="this.document.debtCurrency" 
                     name="debtCurrency" id="debtCurrency" class="data-select"
-                    [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                    [disabled]="this.document.status == 'SENT_TO_CCB'">
                     <option value="EUR">EUR</option>
                     <option value="USD">USD</option>
                     </select>
@@ -143,17 +143,17 @@
                     Tiesa
                 </label>
                 <input type="text"
-                [(ngModel)]="this.documents[this.id].court" 
+                [(ngModel)]="this.document.court" 
                 name="court" style="width: 193px;"
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'">
+                [disabled]="this.document.status == 'SENT_TO_CCB'">
                 <br>
                 <label class="data-label">
                     Lēmums
                 </label>
                 <div class="textarea-wrapper"></div>
-                <textarea [(ngModel)]="this.documents[this.id].decision" 
+                <textarea [(ngModel)]="this.document.decision" 
                 name="decision" id="" rows="3" class="data-text-area "
-                [disabled]="this.documents[this.id].status == 'SENT_TO_CCB'"></textarea>
+                [disabled]="this.document.status == 'SENT_TO_CCB'"></textarea>
             </div>
             <br>
             <div class="top-border data-margin-bottom" style="margin-top: -5px;">
