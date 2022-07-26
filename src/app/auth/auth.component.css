@@ -6,3 +6,127 @@
     height: 400px;
     
 }
+
+.wrapper {
+    margin-left: 238px;
+    margin-top: 20px;
+}
+
+
+.input-field {
+    width: 300px;
+}
+
+.username-field {
+    top: 420px;
+}
+
+.password-field {
+    margin-top: 100px;
+}
+
+.button-position {
+    top: 575px;
+}
+
+.username-extender {
+    width: 600px;
+}
+
+.password-extender {
+    width: 600px;
+    height: 34px;
+    display: flex;
+    margin-left: -300px;
+}
+
+.float-right {
+    margin-left: 300px;
+}
+
+
+.background {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+}
+
+.stacking {
+    position: absolute;
+    z-index: 1;
+}
+.stacking2 {
+    position: absolute;
+    z-index: 2;
+}
+
+
+.animation1 {
+    transform: rotate(-5deg);
+    transition: 0.4s;
+}
+
+.animation2 {
+    transform: rotate(+2deg);
+    transition: 0.4s;
+}
+
+.animation3 {
+    transform: rotate(-10deg);
+    transition: 0.4s;
+}
+
+.animation4 {
+    transform: rotate(-20deg);
+}
+
+.animation5 {
+    transform: rotate(-16deg);
+    transition: 0.3s;
+}
+
+.animation6 {
+    transform: rotate(-100deg);
+    transition: 0.3s;
+}
+
+.animation7 {
+    transform: rotate(-83deg);
+    transition: 0.2s;
+}
+
+.animation8 {
+    transform: rotate(-93deg);
+    transition: 0.2s;
+}
+
+.animation9 {
+    transform: rotate(-90deg);
+    transition: 0.15s;
+}
+
+
+
+.pwAnimation1 {
+    transform: rotate(5deg);
+    transition: 0.4s;
+}
+
+.pwAnimation2 {
+    padding-left: 230px;
+    transition: 5s;
+}
+
+.pwAnimation3 {
+    transform: rotate(15deg);
+    transition: 1.2s;
+}
+
+.pwAnimation4 {
+    transform: rotate(25deg);
+    transition: 1.4s;
+}
+
+
